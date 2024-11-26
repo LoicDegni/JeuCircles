@@ -49,6 +49,7 @@ void application_run(struct application *application) {
                 }
                 break;
             case APPLICATION_STATE_PLAY:
+                background_initialize(application->renderer);
                 break;
             case APPLICATION_STATE_QUIT:
                 break;

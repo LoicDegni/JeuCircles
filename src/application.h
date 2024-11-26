@@ -3,6 +3,7 @@
 
 #include "menu.h"
 #include <stdio.h>
+#include "play.h"
 
 // --------------- //
 // Data structures //
