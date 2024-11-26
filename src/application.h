@@ -1,9 +1,8 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "sdl2.h"
-#include "constants.h"
 #include "menu.h"
+#include <stdio.h>
 
 // --------------- //
 // Data structures //

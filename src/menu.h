@@ -3,6 +3,8 @@
 
 #include "sdl2.h"
 #include "constants.h"
+#include "spritesheet.h"
+#include <stdbool.h>
 
 // --------------- //
 // Data structures //
