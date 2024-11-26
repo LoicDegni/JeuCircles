@@ -1,8 +1,4 @@
 #include "menu.h"
-#include "spritesheet.h"
-#include "sdl2.h"
-
-#include <stdbool.h>
 
 struct menu *menu_initialize(SDL_Renderer *renderer) {
     struct menu *menu;

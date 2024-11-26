@@ -1,6 +1,4 @@
 #include "application.h"
-#include "sdl2.h"
-#include <stdio.h>
 
 struct application *application_initialize() {
     struct application *application;
@@ -47,10 +45,11 @@ void application_run(struct application *application) {
                 if (application->menu->state == MENU_QUIT) {
                     application->state = APPLICATION_STATE_QUIT;
                 } else if (application->menu->state == MENU_PLAY) {
-                    application->state = APPLICATION_STATE_QUIT;
+                    application->state = APPLICATION_STATE_PLAY;
                 }
                 break;
             case APPLICATION_STATE_PLAY:
+                background_initialize(application->renderer);
                 break;
             case APPLICATION_STATE_QUIT:
                 break;
