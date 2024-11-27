@@ -10,5 +10,10 @@ struct player {
     int cadran;
 };
 
+
+int cadran_position(int);
+
+struct player *player_initialization();
+
 #endif
 
