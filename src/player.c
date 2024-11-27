@@ -24,3 +24,14 @@ struct player *player_initialization() {
     player->cadran = cadran_position(player->position);    
     return player;
 }
+
+void player_delete(struct player *player) {
+    free(player);
+}
+
+int player_display(SDL_Renderer *renderer) {
+    filledTrigonRGBA(renderer, 
+
+    return 0;
+}
+
