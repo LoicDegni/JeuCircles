@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "sdl2.h"
 #include "constants.h"
+#include "obstacle.h"
 
 int background_initialize(SDL_Renderer *);
 

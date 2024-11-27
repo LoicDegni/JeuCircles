@@ -4,6 +4,8 @@
 #include "sdl2.h"
 #include "constants.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 struct obstacle {
@@ -15,6 +17,6 @@ struct obstacle {
  */
 struct obstacle obstacle_initialize(int);
 
-int obstacle_display(SDL_Renderer *renderer, struct obstacle);
+int obstacle_display(SDL_Renderer *, struct obstacle*);
 
 #endif
