@@ -27,3 +27,25 @@
 #define STARTING_POSITION 270
 #define CENTER_X (SCREEN_WIDTH * 0.5)
 #define CENTER_Y (SCREEN_HEIGHT * 0.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Oli
+

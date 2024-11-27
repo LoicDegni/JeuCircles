@@ -7,7 +7,7 @@ int background_initialize(SDL_Renderer *renderer) {
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 120, 180, 230, 230, 230, 255);
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 240, 300, 230, 230, 230, 255);
     filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE, 128, 128, 128, 255);
-
+    
     SDL_RenderPresent(renderer);
 
     return 0;
