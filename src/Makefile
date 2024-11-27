@@ -12,7 +12,7 @@ CC = gcc
 OBJS = $(patsubst %.c,%.o,$(wildcard *.c))
 #CFLAGS = -Wall -Wextra `sdl2-config --cflags` -I$(SDL2_GFX_INCLUDE) -I$(SDL2_INCLUDE) -I$(SDL2_IMAGE_INCLUDE)
 CFLAGS = -Wall -Wextra `sdl2-config --cflags`
-LDFLAGS = -lSDL2_image -lSDL2_gfx `sdl2-config --libs`
+LDFLAGS = -lSDL2_image -lSDL2_gfx -lm `sdl2-config --libs`
 #LDFLAGS = -lSDL2_image -lSDL2_gfx `sdl2-config --libs` -L$(SDL2_GFX_LIB) -L$(SDL2_LIB) -L$(SDL2_IMAGE_LIB)
 EXEC = circles
 

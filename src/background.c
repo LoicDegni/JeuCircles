@@ -8,6 +8,8 @@ int background_initialize(SDL_Renderer *renderer) {
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 240, 300, 230, 230, 230, 255);
     filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE, 128, 128, 128, 255);
     
+    struct player *player = player_initialization();
+    player_display(renderer, player);
     SDL_RenderPresent(renderer);
 
     return 0;
