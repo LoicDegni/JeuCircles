@@ -26,13 +26,12 @@ int obstacle_display(SDL_Renderer *renderer, struct obstacle *obstacle) {
 
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon, debut_cadran, fin_cadran,0,0,255,255);
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon - 5, debut_cadran,fin_cadran,couleur,couleur,couleur,255);
-
-   //arcRGBA(renderer, CENTER_X, CENTER_Y, nouvelle_obstacle->rayon, debut_cadran, fin_cadran, 5, 0, 0, 255, 255);
+//thickArcRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon, debut_cadran, fin_cadran, 5, 0, 0, 255, 255);
    return 0;
 }
 
 int obstacle_cadran() {
-   //srand(time(NULL));
+   srand(12345);
    return ((rand() % 6) + 1);
 }
 

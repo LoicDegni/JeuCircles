@@ -11,7 +11,7 @@ int background_initialize(SDL_Renderer *renderer) {
     struct player *player = player_initialization();
     player_display(renderer, player);
 
-    struct obstacle *nouveau = obstacle_initialize(SCREEN_HEIGHT/4);
+    struct obstacle *nouveau = obstacle_initialize(RAYON_MAX);
     obstacle_display(renderer, nouveau);
 
     SDL_RenderPresent(renderer);
