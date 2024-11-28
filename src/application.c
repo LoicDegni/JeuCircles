@@ -38,6 +38,7 @@ struct application *application_initialize() {
 }
 
 void application_run(struct application *application) {
+   initialize_random_time();
     while (application->state != APPLICATION_STATE_QUIT) {
         switch (application->state) {
             case APPLICATION_STATE_MENU:
@@ -65,4 +66,8 @@ void application_shut_down(struct application *application) {
     application = NULL;
     IMG_Quit();
     SDL_Quit();
+}
+
+void initialize_random_time() {
+   srand(time(NULL));
 }

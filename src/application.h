@@ -4,6 +4,7 @@
 #include "menu.h"
 #include <stdio.h>
 #include "play.h"
+#include <time.h>
 
 // --------------- //
 // Data structures //
@@ -46,5 +47,11 @@ void application_run(struct application *application);
  * @param application  The application to be closed
  */
 void application_shut_down(struct application *application);
+
+/**
+ * Permet d'obtenir des variables aleatoire dans tout 
+ * le programe
+ */
+void initialize_random_time();
 
 #endif
