@@ -21,7 +21,7 @@ int obstacle_display(SDL_Renderer *renderer, struct obstacle *obstacle) {
 
    int couleur = 255;
    int fin_cadran = (obstacle->cadran*60) - 1;
-   if(fin_cadran<60 || (fin_cadran >119 & fin_cadran <180) || (fin_cadran > 239 && fin_cadran <300)) couleur = 230;
+   if(fin_cadran<60 || (fin_cadran >119 && fin_cadran <180) || (fin_cadran > 239 && fin_cadran <300)) couleur = 230;
    int debut_cadran = fin_cadran - 59;
 
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon, debut_cadran, fin_cadran,0,0,255,255);
@@ -31,7 +31,7 @@ int obstacle_display(SDL_Renderer *renderer, struct obstacle *obstacle) {
 }
 
 int obstacle_cadran() {
-   srand(12345);
+   srand(time(NULL));
    return ((rand() % 6) + 1);
 }
 
