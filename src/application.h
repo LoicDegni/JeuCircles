@@ -19,6 +19,7 @@ enum application_state {
 struct application {
     enum application_state state; // The current state
     struct menu *menu;            // The home menu
+    struct play *play;            // 
     SDL_Window* window;           // The window
     SDL_Renderer* renderer;       // The renderer
 };

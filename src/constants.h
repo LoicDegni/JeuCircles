@@ -48,4 +48,5 @@
 
 
 //Oli
+#define TIME_FRAME 16
 
