@@ -8,6 +8,6 @@
 #include "obstacle.h"
 
 
-int background_initialize(SDL_Renderer *);
+int background_display(SDL_Renderer *);
 
 #endif
