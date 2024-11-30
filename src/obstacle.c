@@ -8,7 +8,7 @@ struct obstacle*  obstacle_initialize(int rayon)
    return nouvelle_obstacle;
 }
 
-// A completer
+
 int obstacle_display(SDL_Renderer *renderer, struct obstacle *obstacle) {
    if(renderer == NULL){
       fprintf(stderr, "Pointeur invalide");
@@ -26,12 +26,12 @@ int obstacle_display(SDL_Renderer *renderer, struct obstacle *obstacle) {
 
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon, debut_cadran, fin_cadran,0,0,255,255);
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon - 5, debut_cadran,fin_cadran,couleur,couleur,couleur,255);
-//thickArcRGBA(renderer, CENTER_X, CENTER_Y, obstacle->rayon, debut_cadran, fin_cadran, 5, 0, 0, 255, 255);
+   filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE,128,128,128,255);
+
    return 0;
 }
 
 int obstacle_cadran() {
-   srand(time(NULL));
    return ((rand() % 6) + 1);
 }
 

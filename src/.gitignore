@@ -1,2 +1,3 @@
 *.o
 circles
+.DS_Store

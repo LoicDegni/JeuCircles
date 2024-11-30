@@ -14,3 +14,7 @@ void player_animation(struct player *player, SDL_Event event) {
         }
     }
 }
+
+void obstacle_animation(struct obstacle *obstacle) {
+   srand(time(NULL));
+}
