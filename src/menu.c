@@ -8,6 +8,10 @@ struct menu *menu_initialize(SDL_Renderer *renderer) {
     menu->background = spritesheet_create(BACKGROUND_FILENAME, 1, 1, 1, renderer);
     menu->title = spritesheet_create(TITLE_FILENAME, 1, 1, 1, renderer);
     menu->play = spritesheet_create(PLAY_FILENAME, 1, 1, 1, renderer);
+    menu->difficulty = spritesheet_create(DIFFICULTY_FILENAME, 1, 1, 1, renderer);
+    menu->easy = spritesheet_create(EASY_FILENAME, 1, 1, 1, renderer);
+    menu->medium = spritesheet_create(MEDIUM_FILENAME, 1, 1, 1, renderer);
+    menu->hard = spritesheet_create(HARD_FILENAME, 1, 1, 1, renderer);
     menu->quit = spritesheet_create(QUIT_FILENAME, 1, 1, 1, renderer);
     return menu;
 }
@@ -32,11 +36,21 @@ void menu_run(struct menu *menu) {
                         menu->state = menu->state == MENU_PLAY_FOCUS ?
                                       MENU_QUIT_FOCUS : MENU_PLAY_FOCUS;
                         break;
+                    case SDLK_DOWN:
+                        menu->state = MENU_DIFFICULTY_FOCUS;
+                        break;
+                    case SDLK_UP:
+                        if (menu->state == MENU_DIFFICULTY_FOCUS) {
+                            menu->state = MENU_PLAY_FOCUS;
+                        }
+                        break;
                     case SDLK_RETURN:
                         if (menu->state == MENU_PLAY_FOCUS) {
                             menu->state = MENU_PLAY;
                         } else if (menu->state == MENU_QUIT_FOCUS) {
                             menu->state = MENU_QUIT;
+                        } else if (menu->state == MENU_DIFFICULTY_FOCUS) {
+                            menu->state = MENU_DIFFICULTY;
                         }
                         break;
                 }
@@ -50,6 +64,14 @@ void menu_run(struct menu *menu) {
                            255, 0);
         spritesheet_render(menu->play,       PLAY_X,       PLAY_Y,
                            menu_alpha(menu->state == MENU_PLAY_FOCUS), 0);
+        spritesheet_render(menu->difficulty, DIFFICULTY_X, DIFFICULTY_Y,
+                           menu_alpha(menu->state == MENU_DIFFICULTY_FOCUS), 0);
+        spritesheet_render(menu->easy,       EASY_X,       EASY_Y,
+                           menu_alpha(menu->state == MENU_EASY_FOCUS), 0);
+        spritesheet_render(menu->medium,       MEDIUM_X,       MEDIUM_Y,
+                           menu_alpha(menu->state == MENU_MEDIUM_FOCUS), 0);
+        spritesheet_render(menu->hard,       HARD_X,       HARD_Y,
+                           menu_alpha(menu->state == MENU_HARD_FOCUS), 0);
         spritesheet_render(menu->quit,       QUIT_X,       QUIT_Y,
                            menu_alpha(menu->state == MENU_QUIT_FOCUS), 0);
         SDL_RenderPresent(menu->renderer);
