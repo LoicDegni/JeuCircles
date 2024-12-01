@@ -5,26 +5,84 @@
 #include "constants.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <time.h>
 
+//Structure de donnees representant une file d'obstacles
+//------------------------------------------------------
 
-struct obstacle {
-   int rayon;
-   int cadran;
-};
+typedef struct queue_node {
+   unsigned int rayon;
+   unsigned int cadran;
+   struct queue_node *prev;
+   struct queue_node *next;
+} obstacle;
 
+typedef struct {
+   obstacle *first;
+   obstacle *last;
+} file;
+
+// Interface
+// ---------
+
+/**
+ * Creer une file d'obstacles vide
+ *
+ * return la liste
+ */
+file *file_obstacle_initialize();
 
 /**
  * Creer un obstacle
+ *
+ * Retun  l'obstacle
  */
-struct obstacle *obstacle_initialize(int);
+obstacle *obstacle_initialize(int rayon);
 
 /**
- * Affiche un obstacle
+ * Retourne true si la liste est vide
+ *
+ * @param f  la liste d'obstacle a verifier
+ * @return   true si la liste est vide
  */
-int obstacle_display(SDL_Renderer *, struct obstacle*);
+bool file_is_empty(const file *f);
 
-//Fonctions Auxiliaire
+/**
+ * Place un element a la fin de la file
+ *
+ * @param f      la file
+ * @param rayon  le rayon de l'obstacle a ajouter
+ * @param cadran le numero du cadran ou l'obstacle sera ajoute
+ */
+void file_push(file *f, unsigned int rayon) ;
+
+/**
+ * Retire le premier element de la la file
+ *
+ * @param f        La file
+ * @return cadran  le numero du cadran ou l'obastacle retirer etait
+ */
+unsigned int file_pop(file *f);
+
+/**
+ * Affiche les obstacle dans la file
+ *
+ * @param f  la file
+ * @param r  le renderer de l'affichage du jeu
+ * return    la valeur de succes de la fonction d'affichage
+ */
+int obstacle_display(SDL_Renderer * r, const file *f);
+
+/**
+ * Supprime la file d'obstacle
+ *
+ * @param f la file
+ */
+void file_delete(file *f);
+
+
+//Fonctions
 //--------------------
 
 /**
@@ -33,5 +91,4 @@ int obstacle_display(SDL_Renderer *, struct obstacle*);
  */
 int obstacle_cadran();
 
-void obstacle_delete(struct obstacle*);
 #endif

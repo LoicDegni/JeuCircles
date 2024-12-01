@@ -20,7 +20,7 @@ enum play_state {
 struct play {
     enum play_state state;
     struct player *player;
-    struct obstacle *obstacle;
+    file *Obstacles;
     SDL_Renderer *renderer;
 };
 

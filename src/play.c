@@ -4,7 +4,7 @@ struct play *play_initialize(SDL_Renderer *renderer){
     struct play *play = malloc(sizeof(struct play));
     play->state = PLAY_ALIVE;
     play->player = player_initialization();
-    play->obstacle = obstacle_initialize(RAYON_MAX);
+    play->Obstacles= file_obstacle_initialize();
     play->renderer = renderer;
     return play;
 }
@@ -20,10 +20,10 @@ void play_run(struct play *play){
     }   
 //    tick();
 
-    srand(time(NULL));
+    //srand(time(NULL));
     background_display(play->renderer);
+    obstacle_display(play->renderer, play->Obstacles);
     player_display(play->renderer, play->player);
-    obstacle_display(play->renderer, play->obstacle);
     SDL_RenderPresent(play->renderer);
 }
 
