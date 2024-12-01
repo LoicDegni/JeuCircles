@@ -68,7 +68,7 @@ obstacle* obstacle_initialize(int rayon) {
    obstacle *new = malloc(sizeof(obstacle));
    new->rayon = rayon;
    new->cadran = obstacle_cadran();
-   printf("%d\n", new->cadran);
+   //printf("%d\n", new->cadran);
    new->prev = NULL;
    new->next = NULL;
    return new;

@@ -16,9 +16,12 @@ void play_run(struct play *play){
         if (event.type == SDL_QUIT) {
             play->state = PLAY_QUIT;
         }else if (event.type == SDL_KEYDOWN) {
-        player_animation(play->player, event);
+           player_animation(play->player, event);
+        }else {
+           obstacle_animation(play->Obstacles);
         }
-    }   
+
+    }  
     //    tick();
     background_display(play->renderer);
     file_display(play->renderer, play->Obstacles);
