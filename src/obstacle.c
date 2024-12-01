@@ -118,7 +118,12 @@ int obstacle_display(SDL_Renderer *renderer,const obstacle *o) {
 }
 
 int obstacle_cadran() {
-   return ((rand() % 6) + 1);
+   static unsigned int validation = 0;
+   unsigned int num_cadran = ((rand() % 6) + 1);
+   while(num_cadran == validation)
+      num_cadran = ( (rand() % 6) + 1);
+   validation = num_cadran;
+   return num_cadran;
 }
 
 
