@@ -1,7 +1,6 @@
 #include "play.h"
 
 struct play *play_initialize(SDL_Renderer *renderer){
-
    srand(time(NULL));
    struct play *play = malloc(sizeof(struct play));
    play->state = PLAY_ALIVE;
