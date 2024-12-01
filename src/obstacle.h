@@ -69,10 +69,18 @@ unsigned int file_pop(file *f);
  * Affiche les obstacle dans la file
  *
  * @param f  la file
+ * @param r  Le renderer de l'affichage du jeu
+ */
+void file_display(SDL_Renderer *r, const file *f);
+
+/**
+ * Affiche un obstacle dans la file
+ *
+ * @param f  la file
  * @param r  le renderer de l'affichage du jeu
  * return    la valeur de succes de la fonction d'affichage
  */
-int obstacle_display(SDL_Renderer * r, const file *f);
+int obstacle_display(SDL_Renderer * r, const obstacle *o);
 
 /**
  * Supprime la file d'obstacle
