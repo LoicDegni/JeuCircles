@@ -20,7 +20,7 @@ struct player {
 };
 
 int triangle_player(struct player *);
-int cadran_position(int);
+int cadran_position(struct player *);
 struct player *player_initialization();
 void player_delete(struct player *);
 int player_display(SDL_Renderer *, struct player *);
