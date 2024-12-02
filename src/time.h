@@ -25,7 +25,6 @@ struct time {
 // --------- //
 
 struct time *time_initialize(file *Obstacles);
-void time_run(struct time *time);
 float time_variation();
 
 
