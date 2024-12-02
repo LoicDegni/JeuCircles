@@ -21,6 +21,7 @@ void obstacle_animation(file *Obstacles, float delta_time) {
    if (Obstacles == NULL || Obstacles->first == NULL) {
       return;     
    }
+   /**
    int distance = (int)(delta_time * OBSTACLES_SPEED_EASY);
    
    if (Obstacles->first->rayon <= distance) {
@@ -29,10 +30,19 @@ void obstacle_animation(file *Obstacles, float delta_time) {
    } else {
       Obstacles->first->rayon -= distance; 
    }
-       /**
-   int distance = (int)(delta_time*OBSTACLES_SPEED_EASY);
-   Obstacles->first->rayon = (Obstacles->first->rayon < distance) ? 0: Obstacles->first->rayon -=distance; // Ajouter la verif de la position cadran du joueur 
-   (Obstacles->first->rayon == 0) ? file_update(Obstacles): Obstacles->first->rayon;
    */
+   int distance = (int)(delta_time*OBSTACLES_SPEED_EASY);
+
+   for(obstacle *current = Obstacles->first; current !=NULL; current = current->next){
+      if(current->rayon < distance){
+         current->rayon = 0;
+      }else{
+         current->rayon -=distance;
+      }
+      // Ajouter la verif de la position cadran du joueur 
+   }
+
+   while(Obstacles->first->rayon == 0)
+      file_update(Obstacles);
    printf("%d\n", distance);
 }
