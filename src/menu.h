@@ -10,23 +10,24 @@
 // Data structures //
 // --------------- //
 
+enum difficulty_select {
+    EASY,
+    MEDIUM,
+    HARD
+};
+
 enum menu_state {
     MENU_PLAY_FOCUS,       // Play choice has focus
-    MENU_DIFFICULTY_FOCUS, // Difficulty choice has focus
-    MENU_EASY_FOCUS,        //
-    MENU_MEDIUM_FOCUS,      //
-    MENU_HARD_FOCUS,        //
+    MENU_DIFFICULTY_FOCUS, // Difficulty choice has focus   
     MENU_QUIT_FOCUS,       // Quit choice has focus
     MENU_PLAY,             // Play has been chosen
     MENU_DIFFICULTY,       // Difficulty has been chosen
-    MENU_EASY,             // Easy has been chosen
-    MENU_MEDIUM,           // Medium has been chosen
-    MENU_HARD,             // Hard has been chosen
     MENU_QUIT              // Quit has been chosen
 };
 
 struct menu {
     enum menu_state state;          // The choice of the user
+    enum difficulty_select diff_select; // Difficulty selected
     struct spritesheet *background; // The menu background
     struct spritesheet *title;      // The title sprite
     struct spritesheet *play;       // The play sprite
@@ -50,6 +51,11 @@ struct menu {
  */
 struct menu *menu_initialize(SDL_Renderer *renderer);
 
+int menu_alpha(bool);
+
+int difficulty_alpha(bool);
+
+int menu_display(struct menu *);
 /**
  * Start running the menu.
  *
@@ -63,5 +69,6 @@ void menu_run(struct menu *menu);
  * @param menu  The menu to delete
  */
 void menu_delete(struct menu *menu);
+
 
 #endif
