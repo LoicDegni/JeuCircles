@@ -6,7 +6,7 @@ file *file_obstacle_initialize() {
    Obstacles->last = NULL;
 
    for(int i =0; i<6; ++i)
-      file_push(Obstacles, (100 + i*40) );
+      file_push(Obstacles, (RAYON_MAX + i*40) );
 
    return Obstacles;
 }
@@ -68,7 +68,6 @@ obstacle* obstacle_initialize(int rayon) {
    obstacle *new = malloc(sizeof(obstacle));
    new->rayon = rayon;
    new->cadran = obstacle_cadran();
-   //printf("%d\n", new->cadran);
    new->prev = NULL;
    new->next = NULL;
    return new;
@@ -86,8 +85,6 @@ void file_display(SDL_Renderer *renderer, const file *f) {
    int i =0;
    for(obstacle *obstacle = f->first; obstacle !=NULL; obstacle = obstacle->prev){
       obstacle_display(renderer, obstacle);
-      //SDL_RenderPresent(renderer);
-      //printf("%d\n", i);
       i++;
    }
 }
@@ -125,5 +122,12 @@ int obstacle_cadran() {
    validation = num_cadran;
    return num_cadran;
 }
+
+void file_update(file *f) {
+   file_pop(f);
+   file_push(f,RAYON_MAX);
+}
+
+
 
 

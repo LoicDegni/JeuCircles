@@ -85,18 +85,25 @@ int obstacle_display(SDL_Renderer * r, const obstacle *o);
 /**
  * Supprime la file d'obstacle
  *
- * @param f la file
+ * @param f  la file
  */
 void file_delete(file *f);
 
-
-//Fonctions
-//--------------------
+// --------- //
+// Fonctions //
+//---------- //
 
 /**
  * Fourni une position aleatoire entre 1 et 6 de 
  * cadran pour l'obstacle
  */
 int obstacle_cadran();
+
+/**
+ * Supprime le premier obstacle de la file et ajoute un obstacle a la file
+ *
+ * @param f  La file
+ */
+void file_update(file *f);
 
 #endif
