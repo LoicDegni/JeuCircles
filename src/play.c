@@ -5,9 +5,8 @@ struct play *play_initialize(SDL_Renderer *renderer){
    struct play *play = malloc(sizeof(struct play));
    play->state = PLAY_ALIVE;
    play->player = player_initialization();
-   play->Obstacles= file_obstacle_initialize();
+   play->Obstacles = file_obstacle_initialize();
    play->time = time_initialize(play->Obstacles);
-   //time_run(play->time);
    play->renderer = renderer;
    return play;
 }
