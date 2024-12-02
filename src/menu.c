@@ -49,9 +49,9 @@ int menu_display(struct menu *menu) {
             spritesheet_render(menu->title,      TITLE_X,      TITLE_Y,
                               255, 0);
             spritesheet_render(menu->play,       PLAY_X,       PLAY_Y,
-                              difficulty_alpha(menu->state == MENU_PLAY_FOCUS), 0);
+                              menu_alpha(menu->state == MENU_PLAY_FOCUS), 0);
             spritesheet_render(menu->difficulty, DIFFICULTY_X, DIFFICULTY_Y,
-                              difficulty_alpha(menu->state == MENU_DIFFICULTY_FOCUS), 0);
+                              menu_alpha(menu->state == MENU_DIFFICULTY_FOCUS), 0);
             spritesheet_render(menu->easy,       EASY_X,       EASY_Y,
                               menu_alpha(menu->diff_select == EASY), 0);
             spritesheet_render(menu->medium,       MEDIUM_X,       MEDIUM_Y,
