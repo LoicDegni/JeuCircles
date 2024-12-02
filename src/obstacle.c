@@ -4,9 +4,8 @@ file *file_obstacle_initialize() {
    file *Obstacles = malloc(sizeof(file));
    Obstacles->first = NULL;
    Obstacles->last = NULL;
-
-   for(int i =0; i<6; ++i)
-      file_push(Obstacles, (RAYON_MAX + i*40) );
+   Obstacles->nbr_items = 0;
+   Obstacles->compteur = 0;
 
    return Obstacles;
 }
@@ -33,15 +32,17 @@ void file_push(file *f, unsigned int rayon) {
 
    if(f->first == NULL){
       f->first = f->last = new;
+      f->nbr_items++;
    }
    else {
       new->next = f->last;
       f->last->prev = new;
       f->last = new;
+      f->nbr_items++;
    }
 }
 
-unsigned int file_pop(file *f) {
+void file_pop(file *f) {
    if(f == NULL) {
       fprintf(stderr, "Pointeur invalide\n");
       exit(1);
@@ -54,13 +55,14 @@ unsigned int file_pop(file *f) {
    if(f->first == f->last) {
       f->first = f->last = NULL;
       free(temp);
+      f->nbr_items--;
    }
    else{
    f->first = temp->prev;
    f->first->next = NULL;
    free(temp);
+   f->nbr_items--;
    }
-   return cadran;
 }
 
 

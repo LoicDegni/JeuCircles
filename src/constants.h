@@ -21,7 +21,7 @@
 #define DIFFICULTY_FILENAME "../assets/difficulty-small.png"
 #define DIFFICULTY_WIDTH 325
 #define DIFFICULTY_X (0.5 * SCREEN_WIDTH - 0.5 * DIFFICULTY_WIDTH)
-#define DIFFICULTY_Y (0.8 * SCREEN_HEIGHT)
+#define DIFFICULTY_Y (0.65 * SCREEN_HEIGHT)
 #define RAYON_CENTRE (SCREEN_HEIGHT * 0.05)
 #define RAYON_MAX SCREEN_HEIGHT -200
 #define STARTING_POSITION 270
@@ -50,4 +50,17 @@
 
 //Oli
 #define TIME_FRAME 16
+#define EASY_FILENAME "../assets/easy-small.png"
+#define EASY_WIDTH 83
+#define EASY_X (SCREEN_WIDTH * 0.5 - EASY_WIDTH - MEDIUM_WIDTH)
+#define EASY_Y (SCREEN_HEIGHT * 0.8)
+#define MEDIUM_FILENAME "../assets/medium-small.png"
+#define MEDIUM_WIDTH 118
+#define MEDIUM_X (SCREEN_WIDTH * 0.5 - MEDIUM_WIDTH * 0.5)
+#define MEDIUM_Y (SCREEN_HEIGHT * 0.8)
+#define HARD_FILENAME "../assets/hard-small.png"
+#define HARD_WIDTH 86
+#define HARD_X (SCREEN_WIDTH * 0.5 + MEDIUM_WIDTH)
+#define HARD_Y (SCREEN_HEIGHT * 0.8)
+
 

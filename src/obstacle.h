@@ -21,6 +21,8 @@ typedef struct queue_node {
 typedef struct {
    obstacle *first;
    obstacle *last;
+   int nbr_items;
+   int compteur;
 } file;
 
 // Interface
