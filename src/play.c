@@ -6,27 +6,30 @@ struct play *play_initialize(SDL_Renderer *renderer){
    play->state = PLAY_ALIVE;
    play->player = player_initialization();
    play->Obstacles= file_obstacle_initialize();
+   play->time = time_initialize(play->Obstacles);
+   //time_run(play->time);
    play->renderer = renderer;
    return play;
 }
 
 void play_run(struct play *play){
-    SDL_Event event;
-    while (SDL_PollEvent(&event) != 0) {
-        if (event.type == SDL_QUIT) {
+   while(play->time->state == TIME_ON) {
+      SDL_Event event;
+      while (SDL_PollEvent(&event) != 0) {
+         if (event.type == SDL_QUIT) {
+            play->time->state = TIME_OFF;
             play->state = PLAY_QUIT;
-        }else if (event.type == SDL_KEYDOWN) {
-           player_animation(play->player, event);
-        }else {
-           obstacle_animation(play->Obstacles);
+         }
+      if (event.type == SDL_KEYDOWN) {
+         player_animation(play->player, event);
         }
-
-    }  
-    //    tick();
-    background_display(play->renderer);
-    file_display(play->renderer, play->Obstacles);
-    player_display(play->renderer, play->player);
-    SDL_RenderPresent(play->renderer);
+      }
+      obstacle_animation(play->Obstacles, time_variation());
+      background_display(play->renderer);
+      file_display(play->renderer, play->Obstacles);
+      player_display(play->renderer, play->player);
+      SDL_RenderPresent(play->renderer);
+   }
 }
 
 

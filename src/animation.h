@@ -9,6 +9,6 @@ void player_animation(struct player *, SDL_Event);
 /**
  * Gere  l'evolution des obstacles
  */
-void obstacle_animation(file *Obstacles);
+void obstacle_animation(file *Obstacles, float delta_time);
 
 #endif

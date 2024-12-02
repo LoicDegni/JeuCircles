@@ -17,11 +17,7 @@ void player_animation(struct player *player, SDL_Event event) {
     }
 }
 
-void obstacle_animation(file *Obstacle) {
-   static Uint32 last_tick;
-   Uint32 current_tick = SDL_GetTicks();
-   float delta_time = (current_tick - last_tick)/1000.0f;
-   last_tick = current_tick;
+void obstacle_animation(file *Obstacle, float delta_time) {
    int distance = (int)(delta_time*OBSTACLES_SPEED_EASY);
-   printf("%d\n", distance);
+   //printf("%d\n", distance);
 }

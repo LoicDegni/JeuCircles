@@ -39,7 +39,6 @@ struct application *application_initialize() {
 }
 
 void application_run(struct application *application) {
-   //initialize_random_time();
     while (application->state != APPLICATION_STATE_QUIT) {
         switch (application->state) {
             case APPLICATION_STATE_MENU:

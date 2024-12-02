@@ -6,6 +6,7 @@
 #include "constants.h"
 #include "background.h"
 #include "animation.h"
+#include "time.h"
 
 // --------------- //
 // Data structures //
@@ -22,6 +23,7 @@ struct play {
     enum play_state state;
     struct player *player;
     file *Obstacles;
+    struct time *time;
     SDL_Renderer *renderer;
 };
 
