@@ -28,6 +28,7 @@ void play_run(struct play *play){
       file_display(play->renderer, play->Obstacles);
       player_display(play->renderer, play->player);
       SDL_RenderPresent(play->renderer);
+      SDL_Delay(FPS);
    }
 }
 

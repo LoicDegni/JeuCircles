@@ -21,19 +21,24 @@ void obstacle_animation(file *Obstacles, float delta_time) {
    if (Obstacles == NULL || Obstacles->first == NULL) {
       return;     
    }
-   int distance = (int)(delta_time*OBSTACLES_SPEED_EASY);
+   int distance =(int)(delta_time*OBSTACLES_SPEED_EASY);
+   distance = (distance >RAYON_MAX) ? RAYON_MAX/2 : distance;
+
+   printf("%d\n", distance);
 
    for(obstacle *current = Obstacles->first; current !=NULL; current = current->prev){
       if(current->rayon < distance){
          current->rayon = 0;
       }else{
          current->rayon -=distance;
-         printf("%d %d\n", current->rayon, current->cadran);
+         //printf("%d %d\n", current->rayon, current->cadran);
       }
       // Ajouter la verif de la position cadran du joueur 
    }
 
-   while(Obstacles->first->rayon == 0)
+   while(Obstacles->first->rayon == 0){
       file_update(Obstacles);
+      printf("%d %d\n", Obstacles->first->rayon, Obstacles->first->prev->rayon);
+   }
    //printf("%d\n", distance);
 }
