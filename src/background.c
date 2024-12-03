@@ -9,8 +9,12 @@ int background_display(SDL_Renderer *renderer) {
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 0, 59, 230, 230, 230, 255);
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 120, 179, 230, 230, 230, 255);
     filledPieRGBA(renderer, CENTER_X, CENTER_Y, SCREEN_HEIGHT, 240, 299, 230, 230, 230, 255);
-    filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE, 128, 128, 128, 255);
 
     return 0;
 }
 
+int centre_display(SDL_Renderer *renderer) { 
+    filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE, 128, 128, 128, 255);
+
+    return 0;
+}
