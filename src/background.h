@@ -10,4 +10,5 @@
 
 int background_display(SDL_Renderer *);
 
+int centre_display(SDL_Renderer *);
 #endif

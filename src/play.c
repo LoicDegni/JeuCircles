@@ -14,6 +14,7 @@ struct play *play_initialize(SDL_Renderer *renderer){
 
 void play_run(struct play *play){
    while(play->time->state == TIME_ON) {
+       
       SDL_Event event;
       while (SDL_PollEvent(&event) != 0) {
          if (event.type == SDL_QUIT) {
@@ -24,13 +25,15 @@ void play_run(struct play *play){
          player_animation(play->player, event);
         }
       }
-      if (play->compteur == 180) {
-          file_push(play->Obstacles, SCREEN_HEIGHT);    
+      if (play->compteur == 120) {
+          file_push(play->Obstacles, SCREEN_HEIGHT);
+          play->compteur = 0;
       }
-      obstacle_animation(play->Obstacles, time_variation());
+      obstacle_animation(play->Obstacles);
       background_display(play->renderer);
       file_display(play->renderer, play->Obstacles);
       player_display(play->renderer, play->player);
+      centre_display(play->renderer);
       SDL_RenderPresent(play->renderer);
       play->compteur++;
       SDL_Delay(16);
