@@ -22,7 +22,6 @@ typedef struct {
    obstacle *first;
    obstacle *last;
    int nbr_items;
-   int compteur;
 } file;
 
 // Interface

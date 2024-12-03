@@ -5,7 +5,6 @@ file *file_obstacle_initialize() {
    Obstacles->first = NULL;
    Obstacles->last = NULL;
    Obstacles->nbr_items = 0;
-   Obstacles->compteur = 0;
 
    return Obstacles;
 }
@@ -42,7 +41,7 @@ void file_push(file *f, unsigned int rayon) {
    }
 }
 
-void file_pop(file *f) {
+unsigned int file_pop(file *f) {
    if(f == NULL) {
       fprintf(stderr, "Pointeur invalide\n");
       exit(1);
@@ -63,6 +62,7 @@ void file_pop(file *f) {
    free(temp);
    f->nbr_items--;
    }
+   return cadran;
 }
 
 

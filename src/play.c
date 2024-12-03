@@ -7,6 +7,7 @@ struct play *play_initialize(SDL_Renderer *renderer){
    play->player = player_initialization();
    play->Obstacles = file_obstacle_initialize();
    play->time = time_initialize(play->Obstacles);
+   play->compteur = 0;
    play->renderer = renderer;
    return play;
 }
@@ -23,12 +24,16 @@ void play_run(struct play *play){
          player_animation(play->player, event);
         }
       }
+      if (play->compteur == 180) {
+          file_push(play->Obstacles, SCREEN_HEIGHT);    
+      }
       obstacle_animation(play->Obstacles, time_variation());
       background_display(play->renderer);
       file_display(play->renderer, play->Obstacles);
       player_display(play->renderer, play->player);
       SDL_RenderPresent(play->renderer);
-//      SDL_Delay(FRAME_RATE);
+      play->compteur++;
+      SDL_Delay(16);
    }
 }
 
