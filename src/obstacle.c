@@ -22,7 +22,7 @@ void file_push(file *f, unsigned int rayon) {
       fprintf(stderr,"Pointeur invalide\n");
       exit(1);
    }
-   if(rayon < /*SCREEN_HEIGHT */ 0) {
+   if(rayon < SCREEN_HEIGHT/2) {
       fprintf(stderr,"L'obstacle ne commence pas a l'exterieur de l'ecran\n");
       exit(1);
    }
@@ -79,13 +79,10 @@ void file_delete(file *f) {
 }
 
 void file_display(SDL_Renderer *renderer, const file *f) {
-//   int i =0;
-//   for(obstacle *obstacle = f->first; obstacle !=NULL; obstacle = obstacle->prev){
     obstacle *noeud_courant = f->last;
     while (noeud_courant != NULL){
     obstacle_display(renderer, noeud_courant);
     noeud_courant = noeud_courant->next;
-//      i++;
    }
 }
 
@@ -98,11 +95,9 @@ int obstacle_display(SDL_Renderer *renderer,const obstacle *o) {
       fprintf(stderr, "Pointeur invalide");
       exit(1);
    }
-//   int nb = 0;
    int couleur = 255;
    int fin_cadran = (o->cadran*60) - 1;
-
-//   if(fin_cadran<60 || (fin_cadran >119 && fin_cadran <180) || (fin_cadran > 239 && fin_cadran <300)) 
+ 
     if (o->cadran == 1 || o->cadran == 3 || o->cadran == 5)
       couleur = 230;
    
@@ -110,8 +105,7 @@ int obstacle_display(SDL_Renderer *renderer,const obstacle *o) {
 
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, o->rayon + 20, debut_cadran, fin_cadran,0,0,255,255);
    filledPieRGBA(renderer, CENTER_X, CENTER_Y, o->rayon, debut_cadran,fin_cadran,couleur,couleur,couleur,255);
-//   filledCircleRGBA(renderer, CENTER_X, CENTER_Y, RAYON_CENTRE,128,128,128,255);
-  // }
+
    return 0;
 }
 
@@ -123,12 +117,4 @@ int obstacle_cadran() {
    validation = num_cadran;
    return num_cadran;
 }
-
-void file_update(file *f) {
-   file_pop(f);
-   file_push(f,RAYON_MAX);
-}
-
-
-
 
