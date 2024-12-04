@@ -3,12 +3,13 @@
 struct play *play_initialize(SDL_Renderer *renderer){
    srand(time(NULL));
    struct play *play = malloc(sizeof(struct play));
+   play->renderer = renderer;
    play->state = PLAY_ALIVE;
    play->player = player_initialization();
    play->Obstacles = file_obstacle_initialize();
-   play->time = time_initialize(play->Obstacles);
+   play->time = time_initialize();
+   play->chrono = spritesheet_create(CHRONO_FILENAME,1,1,1, renderer);
    play->compteur = 0;
-   play->renderer = renderer;
    return play;
 }
 
@@ -34,6 +35,7 @@ void play_run(struct play *play){
       file_display(play->renderer, play->Obstacles);
       player_display(play->renderer, play->player);
       centre_display(play->renderer);
+      time_variation(play->time);
       SDL_RenderPresent(play->renderer);
       play->compteur++;
       SDL_Delay(16);

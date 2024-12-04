@@ -9,23 +9,14 @@
 // --------------- //
 // Data structures //
 // --------------- //
-
-enum time_state {
-   TIME_ON,
-   TIME_OFF
-};
-
 struct time {
-   enum time_state state;
-   file *Obstacles;
+    int play_time;
 };
 
 // --------- //
 // Fonctions //
 // --------- //
 
-struct time *time_initialize(file *Obstacles);
-float time_variation();
-
-
+struct time *time_initialize();
+void time_variation(struct time* t);
 #endif

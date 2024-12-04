@@ -1,16 +1,11 @@
 #include "time.h"
 
-struct time *time_initialize(file *Obstacles) {
+struct time *time_initialize() {
    struct time* time = malloc(sizeof(struct time));
-   time->state = TIME_ON;
-   time->Obstacles = Obstacles;
+   time->play_time = 0;
    return time;
 }
 
-float time_variation() {
-   static Uint32 last_tick;
-   Uint32 current_tick = SDL_GetTicks();
-   float delta_time = (current_tick - last_tick)/10.0f;
-   last_tick = current_tick;
-   return delta_time;
+void time_variation(struct time *t) {
+    t->play_time = SDL_GetTicks()/1000;
 }

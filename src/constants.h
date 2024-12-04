@@ -28,7 +28,7 @@
 #define CENTER_X (SCREEN_WIDTH * 0.5)
 #define CENTER_Y (SCREEN_HEIGHT * 0.5)
 #define OBSTACLES_SPEED_EASY 1
-
+#define CHRONO_FILENAME "../assets/digits-small.png"
 
 
 
