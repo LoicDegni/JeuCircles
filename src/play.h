@@ -13,7 +13,6 @@
 // --------------- //
 
 enum play_state {
-    PLAY_BEGIN,
     PLAY_ALIVE,
     PLAY_LOST,
     PLAY_QUIT
@@ -21,10 +20,11 @@ enum play_state {
 
 struct play {
     enum play_state state;
+    enum difficulty difficulty;
     struct player *player;
     file *Obstacles;
     struct time *time;
-    int compteur;
+    int counter;
     SDL_Renderer *renderer;
 };
 
@@ -32,7 +32,10 @@ struct play {
 // Functions  //
 // ---------- //
 
-struct play *play_initialize(SDL_Renderer *);
+int counter_setting(enum difficulty);
+int obstacle_movement(enum difficulty);
+struct play *play_initialize(SDL_Renderer *, enum difficulty);
 void play_run(struct play *);
+
 
 #endif

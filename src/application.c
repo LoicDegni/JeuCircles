@@ -49,7 +49,7 @@ void application_run(struct application *application) {
                 }
                 break;
             case APPLICATION_STATE_PLAY:
-               application->play = play_initialize(application->renderer);
+               application->play = play_initialize(application->renderer, application->menu->diff_select);
                play_run(application->play);
                 if (application->play->state == PLAY_QUIT) {
                     //DELETE PLAY
@@ -79,3 +79,5 @@ void application_shut_down(struct application *application) {
 void initialize_random_time() {
    srand(time(NULL));
 }
+
+
