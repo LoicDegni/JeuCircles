@@ -12,6 +12,7 @@
 struct time {
     Uint32 app_start_time;
     int play_time;
+    struct spritesheet *chrono;
 };
 
 // --------- //
@@ -31,5 +32,13 @@ struct time *time_initialize();
  * @param  la structure time
  */
 void time_variation(struct time* t);
+
+/**
+ * Met a jour l'affichage du temps de jeu dans le renderer
+ *
+ * @param  renderer de l'application
+ * @param  la struct time
+ */
+void time_display(SDL_Renderer *renderer, struct time* t);
 
 #endif
