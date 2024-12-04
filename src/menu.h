@@ -4,17 +4,13 @@
 #include "sdl2.h"
 #include "constants.h"
 #include "spritesheet.h"
+#include "difficulty.h"
 #include <stdbool.h>
+
 
 // --------------- //
 // Data structures //
 // --------------- //
-
-enum difficulty_select {
-    EASY,
-    MEDIUM,
-    HARD
-};
 
 enum menu_state {
     MENU_PLAY_FOCUS,       // Play choice has focus
@@ -27,7 +23,7 @@ enum menu_state {
 
 struct menu {
     enum menu_state state;          // The choice of the user
-    enum difficulty_select diff_select; // Difficulty selected
+    enum difficulty diff_select;    // Difficulty selected
     struct spritesheet *background; // The menu background
     struct spritesheet *title;      // The title sprite
     struct spritesheet *play;       // The play sprite
