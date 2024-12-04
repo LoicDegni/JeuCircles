@@ -10,6 +10,7 @@
 // Data structures //
 // --------------- //
 struct time {
+    Uint32 app_start_time;
     int play_time;
 };
 
