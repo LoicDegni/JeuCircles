@@ -34,7 +34,7 @@ void play_run(struct play *play){
       player_display(play->renderer, play->player);
       centre_display(play->renderer);
       time_variation(play->time);
-      time_display(play->renderer, play->time);
+      time_display(play->time);
       SDL_RenderPresent(play->renderer);
       play->compteur++;
       SDL_Delay(16);

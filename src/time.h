@@ -46,6 +46,34 @@ void time_variation(struct time* t);
  * @param  renderer de l'application
  * @param  la struct time
  */
-void time_display(SDL_Renderer *renderer, struct time* t);
+void time_display(struct time* t);
+
+/**
+ * Affiche les dixiemes de seconde du chronometre
+ *
+ * @param d  dixieme
+ */
+void dixieme_display(const int d, struct time *t);
+
+/**
+ * Affiche les secondes du chronometre
+ *
+ * @param s  seconde
+ */
+void seconde_display(const int s, struct time *t);
+
+/**
+ * Affiche les minutes du chronometre
+ *
+ * @param m  minutes
+ */
+void minute_display(const int m, struct time *t);
+
+/**
+ * verifie si un pointeur struct time est valide
+ *
+ * @param t  pointeur
+ */
+void abort_time(struct time *t);
 
 #endif
