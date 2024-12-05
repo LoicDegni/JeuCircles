@@ -10,9 +10,28 @@ struct time *time_initialize(SDL_Renderer *renderer) {
 }
 
 void time_variation(struct time *t) {
-    t->play_time = (t->app_start_time - SDL_GetTicks() )/1000;
+    t->play_time = (SDL_GetTicks() - t->app_start_time )/100;
 }
 
 void time_display(SDL_Renderer *renderer, struct time* t) {
-    spritesheet_render(t->chrono, CHRONO_X, CHRONO_Y, 255, 11);
+    int dixieme = t->play_time % 10;
+    spritesheet_render(t->chrono, CHRONO_X, CHRONO_Y, 255, dixieme);
+    int minute = t->play_time / 600;
+    int seconde = (t->play_time % 600) /10;
+
+    if(minute == 0){
+        spritesheet_render(t->chrono, CHRONO_X, CHRONO_Y, 255, dixieme);
+        spritesheet_render(t->chrono, CHRONO_X - t->chrono->sprite_width, CHRONO_Y, 225, 10);
+        spritesheet_render(t->chrono, CHRONO_X - 2*(t->chrono->sprite_width), CHRONO_Y, 255, seconde%10);
+        spritesheet_render(t->chrono, CHRONO_X - 3*(t->chrono->sprite_width), CHRONO_Y, 255, seconde/10);
+    }else{
+        spritesheet_render(t->chrono, CHRONO_X, CHRONO_Y, 255, dixieme);
+        spritesheet_render(t->chrono, CHRONO_X - t->chrono->sprite_width, CHRONO_Y, 225, 10);
+        spritesheet_render(t->chrono, CHRONO_X - 2*(t->chrono->sprite_width), CHRONO_Y, 255, seconde%10);
+        spritesheet_render(t->chrono, CHRONO_X - 3* (t->chrono->sprite_width), CHRONO_Y, 255, seconde/10);
+        spritesheet_render(t->chrono, CHRONO_X - 4* (t->chrono->sprite_width), CHRONO_Y, 255, 12);
+        
+        spritesheet_render(t->chrono, CHRONO_X - 5* (t->chrono->sprite_width), CHRONO_Y, 255,minute%10);
+        spritesheet_render(t->chrono, CHRONO_X - 6* (t->chrono->sprite_width) , CHRONO_Y, 255, minute/10);
+    }
 }
