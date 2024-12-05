@@ -3,6 +3,7 @@
 
 #include "player.h"
 #include "obstacle.h"
+#include "spritesheet.h"
 
 void player_animation(struct player *, SDL_Event);
 

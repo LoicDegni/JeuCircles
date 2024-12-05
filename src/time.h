@@ -9,7 +9,14 @@
 // --------------- //
 // Data structures //
 // --------------- //
+
+enum time_state {
+    TIME_ON,
+    TIME_OFF
+};
+
 struct time {
+    enum time_state state;
     Uint32 app_start_time;
     int play_time;
     struct spritesheet *chrono;
@@ -24,7 +31,7 @@ struct time {
  *
  * @return  la nouvelle structure time
  */
-struct time *time_initialize();
+struct time *time_initialize(SDL_Renderer *renderer);
 
 /**
  * Met a jour le temp ecouler depuis le lancement du jeu

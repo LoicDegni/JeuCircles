@@ -7,20 +7,18 @@ struct play *play_initialize(SDL_Renderer *renderer){
    play->state = PLAY_ALIVE;
    play->player = player_initialization();
    play->Obstacles = file_obstacle_initialize();
-   play->time = time_initialize();
-   play->chrono = spritesheet_create(CHRONO_FILENAME,1,1,1, renderer);
+   play->time = time_initialize(renderer);
    play->compteur = 0;
    return play;
 }
 
 void play_run(struct play *play){
-   while(play->time->state == TIME_ON) {
-       
+    while(play->time->state == TIME_ON) {
       SDL_Event event;
       while (SDL_PollEvent(&event) != 0) {
          if (event.type == SDL_QUIT) {
-            play->time->state = TIME_OFF;
-            play->state = PLAY_QUIT;
+             play->time->state = TIME_OFF;
+             play->state = PLAY_QUIT;
          }
       if (event.type == SDL_KEYDOWN) {
          player_animation(play->player, event);
@@ -36,10 +34,11 @@ void play_run(struct play *play){
       player_display(play->renderer, play->player);
       centre_display(play->renderer);
       time_variation(play->time);
+      time_display(play->renderer, play->time);
       SDL_RenderPresent(play->renderer);
       play->compteur++;
       SDL_Delay(16);
-   }
+    }
 }
 
 

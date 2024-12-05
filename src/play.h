@@ -24,7 +24,6 @@ struct play {
     struct player *player;
     file *Obstacles;
     struct time *time;
-    struct spritesheet *chrono;
     int compteur;
     SDL_Renderer *renderer;
 };
