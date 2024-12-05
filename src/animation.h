@@ -3,13 +3,13 @@
 
 #include "player.h"
 #include "obstacle.h"
-#include "spritesheet.h"
+#include "difficulty.h"
 
 void player_animation(struct player *, SDL_Event);
 
 /**
  * Gere  l'evolution des obstacles
  */
-void obstacle_animation(file *Obstacles);
+void obstacle_animation(file *Obstacles, int);
 
 #endif

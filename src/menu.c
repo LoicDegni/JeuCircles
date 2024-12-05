@@ -88,9 +88,13 @@ void menu_run(struct menu *menu) {
                             break;
                         }                        
                     case SDLK_RIGHT:
-                        if (menu->state != MENU_DIFFICULTY) { 
+                        if (menu->state != MENU_DIFFICULTY) {
+                            if (menu->state == MENU_DIFFICULTY_FOCUS){
+                                menu->state = MENU_QUIT_FOCUS;
+                            }else{
                             menu->state = menu->state == MENU_PLAY_FOCUS ?
                                           MENU_QUIT_FOCUS : MENU_PLAY_FOCUS;
+                            }
                             break;
                         }else{
                             if (menu->diff_select == EASY) {
