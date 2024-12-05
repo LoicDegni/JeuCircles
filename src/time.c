@@ -52,3 +52,8 @@ void abort_time(struct time *t) {
         exit(1);
     }
 }
+
+void time_delete(struct time *t) {
+    abort_time(t);
+    free(t);
+}

@@ -77,4 +77,11 @@ void minute_display(const int m, struct time *t);
  */
 void abort_time(struct time *t);
 
+/**
+ * Supprime un objet struct time
+ *
+ * @param t  objet struct time
+ */
+void time_delete(struct time *t);
+
 #endif
