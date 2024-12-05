@@ -8,9 +8,8 @@ struct play *play_initialize(SDL_Renderer *renderer, enum difficulty diff_settin
    play->difficulty = diff_setting;
    play->player = player_initialization();
    play->Obstacles = file_obstacle_initialize();
-   play->time = time_initialize(play->Obstacles);
+   play->time = time_initialize(renderer);
    play->counter = 0;
-   play->renderer = renderer;
    return play;
 }
 

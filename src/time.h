@@ -3,6 +3,7 @@
 
 #include "animation.h"
 #include "sdl2.h"
+#include "spritesheet.h"
 #include <time.h>
 
 
