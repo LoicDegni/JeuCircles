@@ -100,4 +100,18 @@ void file_delete(file *f);
  */
 int obstacle_cadran();
 
+/**
+ * Arrete le programme si un pointeur de file est NULL
+ *
+ * @param f  la file
+ */
+void abort_file(const file *f);
+
+/**
+ * Arrete le programme si un pointeur d'obstacle est NULL
+ *
+ * @param o  Obstacle
+ */
+void abort_obstacle(const obstacle *o);
+
 #endif
