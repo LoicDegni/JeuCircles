@@ -27,10 +27,10 @@
 #define STARTING_POSITION 270
 #define CENTER_X (SCREEN_WIDTH * 0.5)
 #define CENTER_Y (SCREEN_HEIGHT * 0.5)
-
-
-
-
+#define CHRONO_FILENAME "../assets/digits-small.png"
+#define CHRONO_WIDTH (0.25 * SCREEN_WIDTH)
+#define CHRONO_X  (1.3 * (0.5 * SCREEN_WIDTH) + CHRONO_WIDTH)
+#define CHRONO_Y (SCREEN_HEIGHT * 0.1)
 
 
 
