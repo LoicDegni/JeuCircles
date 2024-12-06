@@ -100,11 +100,4 @@ void file_delete(file *f);
  */
 int obstacle_cadran();
 
-/**
- * Supprime le premier obstacle de la file et ajoute un obstacle a la file
- *
- * @param f  La file
- */
-void file_update(file *f);
-
 #endif
