@@ -13,33 +13,49 @@ struct play *play_initialize(SDL_Renderer *renderer, enum difficulty diff_settin
    return play;
 }
 
+bool collision(struct player *player, file *obstacles) {
+    bool touche = false;
+    obstacle *o = obstacles->first;
+    while (o != NULL) {
+        if (o->rayon < COLLISION_MAX && (o->rayon + 20) > COLLISION_MIN && o->cadran == player->cadran) {
+            touche = true;
+        }
+        o = o->prev;
+    }
+    return touche;
+}
+
 void play_run(struct play *play){
     while(play->time->state == TIME_ON) {
-      SDL_Event event;
-      while (SDL_PollEvent(&event) != 0) {
-         if (event.type == SDL_QUIT) {
-             play->time->state = TIME_OFF;
-             play->state = PLAY_QUIT;
-         }
-      if (event.type == SDL_KEYDOWN) {
-         player_animation(play->player, event);
+        if (collision(play->player, play->Obstacles)) {
+            play->time->state = TIME_OFF;
+            play->state = PLAY_QUIT;
         }
-      }
-      if (play->counter == counter_setting(play->difficulty)) {
-          file_push(play->Obstacles, SCREEN_HEIGHT);
-          play->counter = 0;
-      }
-      obstacle_animation(play->Obstacles, obstacle_movement(play->difficulty));
-      background_display(play->renderer);
-      file_display(play->renderer, play->Obstacles);
-      player_display(play->renderer, play->player);
-      centre_display(play->renderer);
-      time_variation(play->time);
-      time_display(play->time);
-      SDL_RenderPresent(play->renderer);
-      play->counter++;
-      SDL_Delay(TIME_FRAME);
-   }
+       SDL_Event event;
+        while (SDL_PollEvent(&event) != 0) {
+            if (event.type == SDL_QUIT) {
+                play->time->state = TIME_OFF;
+                play->state = PLAY_QUIT;
+            }
+            if (event.type == SDL_KEYDOWN) {
+                player_animation(play->player, event);
+            }
+        }
+        if (play->counter == counter_setting(play->difficulty)) {
+            file_push(play->Obstacles, SCREEN_HEIGHT);
+            play->counter = 0;
+        }
+        obstacle_animation(play->Obstacles, obstacle_movement(play->difficulty));
+        background_display(play->renderer);
+        file_display(play->renderer, play->Obstacles);
+        player_display(play->renderer, play->player);
+        centre_display(play->renderer);
+        time_variation(play->time);
+        time_display(play->time);
+        SDL_RenderPresent(play->renderer);
+        play->counter++;
+        SDL_Delay(TIME_FRAME);
+    }
 }
 
 int obstacle_movement(enum difficulty difficulty){

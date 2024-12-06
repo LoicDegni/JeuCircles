@@ -32,6 +32,7 @@ struct play {
 // Functions  //
 // ---------- //
 
+bool collision(struct player *, file *);
 int counter_setting(enum difficulty);
 int obstacle_movement(enum difficulty);
 struct play *play_initialize(SDL_Renderer *, enum difficulty);
