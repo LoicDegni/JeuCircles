@@ -13,5 +13,5 @@ build:
         - cd src
         - make
     artifacts:
-      path:
-        -src/circles
+      paths:
+        - src/circles
