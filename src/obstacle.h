@@ -12,8 +12,8 @@
 //------------------------------------------------------
 
 typedef struct queue_node {
-   unsigned int rayon;
-   unsigned int cadran;
+   int rayon;
+   int cadran;
    struct queue_node *prev;
    struct queue_node *next;
 } obstacle;

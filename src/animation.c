@@ -5,6 +5,11 @@ void player_animation(struct player *player, SDL_Event event) {
         switch (event.key.keysym.sym) {
             case SDLK_LEFT:
                 player->position -= PLAYER_MOVEMENT;
+                if (player->position > 360) {
+                    player->position = 0;
+                }else if (player->position < 0) {
+                    player->position = 360;
+                }
                 triangle_player(player);
                 cadran_position(player);
                 break;
