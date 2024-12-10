@@ -31,9 +31,9 @@
 #define CHRONO_WIDTH (0.25 * SCREEN_WIDTH)
 #define CHRONO_X  (1.3 * (0.5 * SCREEN_WIDTH) + CHRONO_WIDTH)
 #define CHRONO_Y (SCREEN_HEIGHT * 0.1)
-
-
-
+#define BACKGROUND_END_FILENAME "../assets/gameoff.png"
+#define BACKGROUND_END_X 60
+#define BACKGROUND_END_Y 0
 
 
 

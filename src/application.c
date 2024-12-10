@@ -57,11 +57,12 @@ void application_run(struct application *application) {
                 }else if (application->play->state == PLAY_LOST) {
                     //DELETE PLAY
                     application->state = APPLICATION_STATE_MENU;
+                    application->menu->state = MENU_PLAY_FOCUS;
+                }
                 break;
             case APPLICATION_STATE_QUIT:
                 application_shut_down(application);
                 break;
-            }
         }
     }
 }
