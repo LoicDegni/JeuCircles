@@ -47,8 +47,14 @@ struct menu {
  */
 struct menu *menu_initialize(SDL_Renderer *renderer);
 
+/**
+ * Gère l'alpha du menu principal
+ */
 int menu_alpha(bool);
 
+/**
+ * Gère l'alpha du menu de difficulté
+ */
 int difficulty_alpha(bool);
 
 int menu_display(struct menu *);
