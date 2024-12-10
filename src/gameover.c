@@ -21,7 +21,7 @@ void game_over_run(struct game_over *g){
                 g->play->state = PLAY_QUIT;
                 g->state = GAME_OVER_OFF;
             }
-            else if(event.type == SDL_KEYDOWN){
+            else if(event.key.keysym.sym == SDLK_RETURN){
                 g->play->state = PLAY_LOST;
                 g->state = GAME_OVER_OFF;
             }
