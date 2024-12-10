@@ -35,7 +35,7 @@ void game_over_display(struct game_over *g){
     abort_game_over(g);
     SDL_SetRenderDrawColor(g->renderer, 255, 255, 255, 255);
     SDL_RenderClear(g->renderer);
-    spritesheet_render(g->background, BACKGROUND_X, BACKGROUND_Y, 255,0);
+    spritesheet_render(g->background, 60, BACKGROUND_Y, 255,0);
     time_display(g->time);
 }
 
