@@ -9,6 +9,7 @@ struct game_over *game_over_initialize(struct play *play){
     time_variation(gameover->time);
     gameover->background = spritesheet_create(BACKGROUND_END_FILENAME,1,1,1, play->renderer);
     gameover->renderer = play->renderer;
+    return gameover;
 }
 
 void game_over_run(struct game_over *g){
