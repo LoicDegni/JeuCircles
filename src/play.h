@@ -7,6 +7,7 @@
 #include "background.h"
 #include "animation.h"
 #include "time.h"
+#include "gameover.h"
 
 // --------------- //
 // Data structures //
@@ -25,6 +26,7 @@ struct play {
     file *Obstacles;
     struct time *time;
     int counter;
+    struct game_over *game_over;
     SDL_Renderer *renderer;
 };
 
@@ -37,6 +39,12 @@ int counter_setting(enum difficulty);
 int obstacle_movement(enum difficulty);
 struct play *play_initialize(SDL_Renderer *, enum difficulty);
 void play_run(struct play *);
+
+/** 
+ * Verifie que le pointeur n'est pas NUL
+ * @param  struct play
+ */
+void abort_play(struct play*);
 
 
 #endif
