@@ -28,12 +28,10 @@ bool collision(struct player *player, file *obstacles) {
 void play_run(struct play *play){
     abort_play(play);
     while(play->time->state == TIME_ON) {
-        if (collision(play->player, play->Obstacles)) {
-            play->time->state = TIME_OFF;
-            play->game_over = game_over_initialize(play);
-        }
+        verif_colision(play);
        SDL_Event event;
         while (SDL_PollEvent(&event) != 0) {
+            verif_colision(play);
             if (event.type == SDL_QUIT) {
                 play->time->state = TIME_OFF;
                 play->state = PLAY_QUIT;
@@ -92,9 +90,20 @@ int counter_setting(enum difficulty difficulty) {
     return counter_treshold;
 }
 
+void verif_colision(struct play *play) {
+    if(collision(play->player, play->Obstacles)){
+        play->time->state = TIME_OFF;
+        play->game_over = game_over_initialize(play);
+    }
+}
+
+
+
+
+
 void abort_play(struct play *play){
     if(play == NULL){
-        fprintf(stderr, "Pointeur play invalide");
+        fprintf(stderr, "Pointeur struct play invalide");
         exit(1);
     }
 }
