@@ -4,41 +4,34 @@ void player_animation(struct player *player, SDL_Event event) {
     if (event.type == SDL_KEYDOWN) {
         switch (event.key.keysym.sym) {
             case SDLK_LEFT:
-                player->position -= 5;
+                player->position -= PLAYER_MOVEMENT;
+                if (player->position > 360) {
+                    player->position = 0;
+                }else if (player->position < 0) {
+                    player->position = 360;
+                }
                 triangle_player(player);
                 cadran_position(player);
                 break;
             case SDLK_RIGHT:
-                player->position += 5;
+                player->position += PLAYER_MOVEMENT;
                 triangle_player(player);
                 cadran_position(player);
                 break;
         }
     }
 }
-// ON DOIT FAIRE EN SORTE QUE UN SEUL RAYON 
-void obstacle_animation(file *Obstacles, float delta_time) {
-   if (Obstacles == NULL || Obstacles->first == NULL) {
-      return;     
-   }
-   int distance =(int)(delta_time*OBSTACLES_SPEED_EASY);
-   distance = (distance >RAYON_MAX) ? RAYON_MAX/2 : distance;
 
-   printf("%d\n", distance);
-
-   for(obstacle *current = Obstacles->first; current !=NULL; current = current->prev){
-      if(current->rayon < distance){
-         current->rayon = 0;
-      }else{
-         current->rayon -=distance;
-         //printf("%d %d\n", current->rayon, current->cadran);
-      }
-      // Ajouter la verif de la position cadran du joueur 
-   }
-
-   while(Obstacles->first->rayon == 0){
-      file_update(Obstacles);
-      printf("%d %d\n", Obstacles->first->rayon, Obstacles->first->prev->rayon);
-   }
-   //printf("%d\n", distance);
+void obstacle_animation(file *Obstacles, int diff_setting) {
+    obstacle *noeud_courant = Obstacles->first;
+    while (noeud_courant != NULL){
+        noeud_courant->rayon -= diff_setting;
+        int rayon = noeud_courant->rayon;
+        noeud_courant = noeud_courant->prev;
+        if (rayon == 0) {
+            file_pop(Obstacles);
+        }
+    }
 }
+
+

@@ -12,8 +12,8 @@
 //------------------------------------------------------
 
 typedef struct queue_node {
-   unsigned int rayon;
-   unsigned int cadran;
+   int rayon;
+   int cadran;
    struct queue_node *prev;
    struct queue_node *next;
 } obstacle;
@@ -21,6 +21,7 @@ typedef struct queue_node {
 typedef struct {
    obstacle *first;
    obstacle *last;
+   int nbr_items;
 } file;
 
 // Interface
@@ -100,10 +101,17 @@ void file_delete(file *f);
 int obstacle_cadran();
 
 /**
- * Supprime le premier obstacle de la file et ajoute un obstacle a la file
+ * Arrete le programme si un pointeur de file est NULL
  *
- * @param f  La file
+ * @param f  la file
  */
-void file_update(file *f);
+void abort_file(const file *f);
+
+/**
+ * Arrete le programme si un pointeur d'obstacle est NULL
+ *
+ * @param o  Obstacle
+ */
+void abort_obstacle(const obstacle *o);
 
 #endif

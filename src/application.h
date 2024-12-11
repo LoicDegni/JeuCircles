@@ -51,7 +51,7 @@ void application_shut_down(struct application *application);
 
 /**
  * Permet d'obtenir des variables aleatoire dans tout 
- * le programe
+ * le programme
  */
 void initialize_random_time();
 

@@ -33,7 +33,6 @@ struct application *application_initialize() {
         fprintf(stderr, "Failed to initialize menu: %s\n", IMG_GetError());
         return NULL;
     }
-    application->play = play_initialize(application->renderer);
     application->state = APPLICATION_STATE_MENU;
     return application;
 }
@@ -50,16 +49,20 @@ void application_run(struct application *application) {
                 }
                 break;
             case APPLICATION_STATE_PLAY:
-                play_run(application->play);
+               application->play = play_initialize(application->renderer, application->menu->diff_select);
+               play_run(application->play);
                 if (application->play->state == PLAY_QUIT) {
+                    //DELETE PLAY
                     application->state = APPLICATION_STATE_QUIT;
                 }else if (application->play->state == PLAY_LOST) {
+                    //DELETE PLAY
                     application->state = APPLICATION_STATE_MENU;
+                    application->menu->state = MENU_PLAY_FOCUS;
+                }
                 break;
             case APPLICATION_STATE_QUIT:
                 application_shut_down(application);
                 break;
-            }
         }
     }
 }
@@ -77,3 +80,5 @@ void application_shut_down(struct application *application) {
 void initialize_random_time() {
    srand(time(NULL));
 }
+
+
