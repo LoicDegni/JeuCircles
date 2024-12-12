@@ -34,3 +34,4 @@ void obstacle_animation(file *Obstacles, int diff_setting) {
     }
 }
 
+
