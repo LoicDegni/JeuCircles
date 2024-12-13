@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "play.h"
 #include <time.h>
+#include "music.h"
 
 // --------------- //
 // Data structures //
