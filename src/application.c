@@ -50,12 +50,17 @@ void application_run(struct application *application) {
                 break;
             case APPLICATION_STATE_PLAY:
                application->play = play_initialize(application->renderer, application->menu->diff_select);
+               music_initialisation();
+               Mix_Music *music = music_load();
+               music_play(music);
                play_run(application->play);
                 if (application->play->state == PLAY_QUIT) {
-                    //DELETE PLAY
+                    music_delete(music);
+                    play_delete(application->play);
                     application->state = APPLICATION_STATE_QUIT;
                 }else if (application->play->state == PLAY_LOST) {
-                    //DELETE PLAY
+                    music_delete(music);
+                    play_delete(application->play);
                     application->state = APPLICATION_STATE_MENU;
                     application->menu->state = MENU_PLAY_FOCUS;
                 }

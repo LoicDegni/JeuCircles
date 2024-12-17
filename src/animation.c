@@ -15,6 +15,11 @@ void player_animation(struct player *player, SDL_Event event) {
                 break;
             case SDLK_RIGHT:
                 player->position += PLAYER_MOVEMENT;
+                 if (player->position > 360) {
+                    player->position = 0;
+                }else if (player->position < 0) {
+                    player->position = 360;
+                }
                 triangle_player(player);
                 cadran_position(player);
                 break;
@@ -33,4 +38,5 @@ void obstacle_animation(file *Obstacles, int diff_setting) {
         }
     }
 }
+
 

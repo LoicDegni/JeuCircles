@@ -3,12 +3,11 @@
 ## Description
 
 * Description du projet en quelques phrases.
-* Mentionner le contexte (cours, sigle, université, etc.).
+* INF3135, UQAM, AUT2024
 
 ## Auteurs
 
-- Prénom et nom (Code permanent)
-- Prénom et nom (Code permanent)
+- Olivier Généreux-Vincent (GENO22058208)
 - Prénom et nom (Code permanent)
 
 ## Dépendances
@@ -23,11 +22,11 @@ officiels.
 
 ## Fonctionnement
 
-* Expliquez comment compiler, comment lancer l'application et comment
-  fonctionne le jeu
+* Pour compiler, allez dans le dossier /src.  Par la suite, faire la commande 'make'.
+  Pour partir le jeux, faire la commande './circle'
 * Quel est sont but?
-* Quelles touches permettent de naviguer dans le menu?
-* Quelles touches permettent de déplacer le triangle?
+* Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
+* Pour déplacer le joueur durant la partie, appuyer sur les flèches GAUCHE et DROITE.
 * N'hésitez pas à inclure des captures d'écran ici, comme ça, ça fait de la
   publicité pour votre jeu!
 
@@ -46,18 +45,17 @@ Donnez ici une liste des tâches de chacun des membres de l'équipe. Utilisez la
 syntaxe suivante (les crochets vides indiquent que la tâche n'est pas
 complétée, les crochets avec un `X` indique que la tâche est complétée):
 
-* [ ] Gestion du menu (Alice)
-* [ ] Affichage de la scène (Bob)
-* [ ] Affichage du chronomètre (Carl)
-* [ ] Animation des murs (Bob)
-* [X] Animation du joueur (Alice)
-* [ ] Détection des collisions (Carl)
-* [ ] Affichage d'une partie terminée (Bob)
-* [X] Gestion de la musique principale (Alice)
-* [ ] Gestion des sons lorsqu'on navigue dans le menu (Alice)
-* [ ] Gestion de la musique de fin de partie (Carl)
+* [X] Gestion du menu (Olivier)
+* [X] Affichage de la scène (Olivier, Loic)
+* [X] Affichage du chronomètre (Loic)
+* [X] Animation des murs (Loic, Olivier)
+* [X] Animation du joueur (Olivier)
+* [X] Détection des collisions (Olivier, Loic)
+* [X] Affichage d'une partie terminée (Loic)
+* [X] Gestion de la musique principale (Olivier)
+* [ ] Gestion des sons lorsqu'on navigue dans le menu
+* [ ] Gestion de la musique de fin de partie
 
 ## État du projet
 
-Indiquer si le projet est complété et sans bogue. Sinon, expliquez ce qui
-manque ou ce qui ne fonctionne pas.
+Le programme marche sans bogue du début à la fin.  Plusieurs parties peuvent être effectuer une à la suite de l'autre.
