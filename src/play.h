@@ -74,11 +74,24 @@ struct play *play_initialize(SDL_Renderer *, enum difficulty);
  */
 void play_run(struct play *);
 
+/**
+ * Verifie si il y a une colision
+ *
+ * Compare la position de l'obstacle et du joueur
+ *
+ * @param struct play 
+ */
+void verif_colision(struct play *play);
+
 /** 
  * Verifie que le pointeur n'est pas NUL
  * @param  struct play
  */
 void abort_play(struct play*);
 
-
+/**
+ * Libère la mémoire de la structure play.
+ */
+void play_delete(struct play *);
 #endif
+
