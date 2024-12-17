@@ -56,11 +56,11 @@ void application_run(struct application *application) {
                play_run(application->play);
                 if (application->play->state == PLAY_QUIT) {
                     music_delete(music);
-                    //DELETE PLAY
+                    play_delete(application->play);
                     application->state = APPLICATION_STATE_QUIT;
                 }else if (application->play->state == PLAY_LOST) {
                     music_delete(music);
-                    //DELETE PLAY
+                    play_delete(application->play);
                     application->state = APPLICATION_STATE_MENU;
                     application->menu->state = MENU_PLAY_FOCUS;
                 }

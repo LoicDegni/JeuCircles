@@ -97,10 +97,6 @@ void verif_colision(struct play *play) {
     }
 }
 
-
-
-
-
 void abort_play(struct play *play){
     if(play == NULL){
         fprintf(stderr, "Pointeur struct play invalide");
@@ -108,5 +104,11 @@ void abort_play(struct play *play){
     }
 }
 
-
+void play_delete(struct play *play) {
+    file_delete(play->Obstacles);
+    time_delete(play->time);
+    player_delete(play->player);
+    game_over_delete(play->game_over);
+    free(play);
+}
 

@@ -89,5 +89,8 @@ void verif_colision(struct play *play);
  */
 void abort_play(struct play*);
 
-
+/**
+ * Libère la mémoire de la structure play.
+ */
+void play_delete(struct play *);
 #endif
