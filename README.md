@@ -22,7 +22,7 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
 
 - **Compilateur GCC**  
   Le projet nécessite un compilateur C pour compiler le code source. Vous pouvez utiliser GCC ou Clang. Ces compilateurs sont généralement installés par défaut sur les systèmes Unix, Ubuntu et macOS avec Xcode.  
-  - [Site officiel de GCC](https://gcc.gnu.org/)
+  [Site officiel de GCC](https://gcc.gnu.org/)
 
 
 #### Bibliothèques
@@ -45,19 +45,38 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
 
 ## Fonctionnement
 
-* Pour compiler, allez dans le dossier /src.  Par la suite, faire la commande 'make'.
-  Pour partir le jeux, faire la commande './circle'
-* Quel est sont but?
-* Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
-* Le jeu debute sur la page du menu
-* ![1](./assets/screen_menu.png)
-* Vous pouvez faire un choix parmis les trois niveaux de difficultes
-* ![2](./assets/screen_difficulty.png)
-* Apres avoir cliquer sur play, le jeu debute. Vous avez le chronometre en haut a droite de l'ecran
-* ![3](./assets/screen_play.png)
-* Pour déplacer le joueur durant la partie, appuyer sur les flèches GAUCHE et DROITE.
-* Si vous toucher un obstacle, vous arrivez a l'ecran de fin. Il suffit de cliquer sur la touche return pour revenir au menu principal
-* ![4](./assets/screen_end.png)
+- Pour compiler, allez dans le dossier /src.  Par la suite, faire la commande 'make'.
+
+- Pour partir le jeux, faire la commande './circle'
+
+- Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
+
+#### Objectif du jeu
+Le but du jeu est de survivre le plus longtemps possible en évitant les obstacles.
+
+#### Navigation dans le menu
+* Utilisez les flèches pour naviguer dans le menu.
+* La touche `Enter` permet de faire un choix.
+
+#### Menu principal
+Le jeu débute sur la page du menu. Vous pouvez choisir parmi trois niveaux de difficulté.
+![Menu principal](./assets/screen_menu.png)
+
+#### Choix de la difficulté
+Après avoir sélectionné "Play", vous choisissez le niveau de difficulté.
+![Sélection de la difficulté](./assets/screen_difficulty.png)
+
+#### Pendant le jeu
+Le jeu commence après avoir cliqué sur "Play". Le chronomètre est affiché en haut à droite de l'écran.
+![Jeu en cours](./assets/screen_play.png)
+
+#### Déplacement du joueur
+Pour déplacer le joueur, appuyez sur les flèches `GAUCHE` et `DROITE`.
+
+#### Fin du jeu
+Si vous touchez un obstacle, l'écran de fin apparaît. Appuyez sur la touche `Enter` pour revenir au menu principal.
+![Écran de fin](./assets/screen_end.png)
+
 
 ## Plateformes supportées
 
