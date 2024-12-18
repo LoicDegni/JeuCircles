@@ -23,8 +23,7 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
 - **Compilateur GCC**  
   Le projet nécessite un compilateur C pour compiler le code source. Vous pouvez utiliser GCC ou Clang. Ces compilateurs sont généralement installés par défaut sur les systèmes Unix, Ubuntu et macOS avec Xcode.  
   - [Site officiel de GCC](https://gcc.gnu.org/)
-  - Pour **Ubuntu**, GCC est préinstallé ou peut être installé via le gestionnaire de paquets :  
-    [Documentation Ubuntu GCC](https://packages.ubuntu.com/search?keywords=gcc)
+
 
 #### Bibliothèques
 
@@ -50,14 +49,16 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
   Pour partir le jeux, faire la commande './circle'
 * Quel est sont but?
 * Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
+* ![Le jeu debute sur la page du menu](./assets/screen_menu.png)
+* ![Vous pouvez faire un choix parmis les trois niveaux de difficultes](./assets/screen_difficulty.png)
+* ![Apres avoir cliquer sur play, le jeu debute. Vous avez le chronometre en haut a droite de l'ecran](./assets/screen_play.png)
 * Pour déplacer le joueur durant la partie, appuyer sur les flèches GAUCHE et DROITE.
-* N'hésitez pas à inclure des captures d'écran ici, comme ça, ça fait de la
-  publicité pour votre jeu!
+* ![Si vous toucher un obstacle, vous arrivez a l'ecran de fin. Il suffit de cliquer sur la touche return pour revenir au menu principal](./assets/screen_end.png)
 
 ## Plateformes supportées
 
-Indiquez toutes les plateformes sur lesquelles vous avez testé l'application,
-avec la version.
+* MacOS M2
+* Ubuntu
 
 ## Références
 
