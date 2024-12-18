@@ -2,8 +2,12 @@
 
 ## Description
 
-* Description du projet en quelques phrases.
-* INF3135, UQAM, AUT2024
+### INF3135, UQAM, AUT2024
+* Jeu Inspiré de Super Hexagon
+
+Ce projet pour le cours **INF 3135** est un jeu vidéo inspiré de *Super Hexagon* de Terry Cavanagh. Le joueur contrôle une flèche rouge qui tourne autour d’un centre, tout en évitant des obstacles qui apparaissent de manière aléatoire. L’objectif principal est de survivre le plus longtemps possible en esquivant ces obstacles.
+
+Le jeu propose trois niveaux de difficulté : **Easy**, **Normal**, et **Hard**, chacun augmentant la vitesse des obstacles. Avec une esthétique minimaliste et un gameplay addictif, ce projet met en valeur des concepts clés en programmation tels que la gestion des événements, les animations graphiques, et l’intégration audio pour une expérience immersive.
 
 ## Auteurs
 
@@ -12,13 +16,33 @@
 
 ## Dépendances
 
-Avant même d'expliquer le fonctionnement de votre programme, décrivez toutes
-les dépendances de votre projet, autant au niveau des logiciels (s'il y en a)
-que des bibliothèques (par exemple SDL2). Fournissez les liens vers les sites
-officiels des dépendances si possible. Ceci permettra à l'utilisateur de savoir
-ce qu'il doit installer pour faire tourner votre programme. Pas besoin
-d'expliquer comment faire l'installation, mais simplement référer aux sites
-officiels.
+Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs dépendances logicielles et bibliothèques. Ces dépendances sont essentielles au bon fonctionnement du jeu.
+
+## Logiciels
+
+- **Compilateur GCC**  
+  Le projet nécessite un compilateur C pour compiler le code source. Vous pouvez utiliser GCC ou Clang. Ces compilateurs sont généralement installés par défaut sur les systèmes Unix, Ubuntu et macOS avec Xcode.  
+  - [Site officiel de GCC](https://gcc.gnu.org/)
+  - Pour **Ubuntu**, GCC est préinstallé ou peut être installé via le gestionnaire de paquets :  
+    [Documentation Ubuntu GCC](https://packages.ubuntu.com/search?keywords=gcc)
+
+## Bibliothèques
+
+- **SDL2 (Simple DirectMedia Layer 2)**  
+  SDL2 est utilisé pour la gestion des graphiques, des entrées utilisateur et de l'audio.  
+  [Site officiel de SDL2](https://www.libsdl.org/)
+
+- **SDL2_mixer**  
+  Cette bibliothèque permet de gérer les effets sonores et la musique dans le jeu. Elle s’appuie sur SDL2 pour fournir des fonctionnalités audio avancées.  
+  [Site officiel de SDL2_mixer](https://www.libsdl.org/projects/SDL_mixer/)
+
+- **SDL2_image**  
+  SDL2_image est utilisé pour charger et afficher des images dans différents formats (PNG, JPEG, etc.).  
+  [Site officiel de SDL2_image](https://www.libsdl.org/projects/SDL_image/)
+
+- **SDL2_gfx**  
+  Cette bibliothèque est utilisée pour dessiner des formes géométriques, des lignes, et gérer des effets graphiques simples.  
+  [Site officiel de SDL2_gfx](https://www.ferzkopp.net/Software/SDL_gfx/)
 
 ## Fonctionnement
 
