@@ -5,7 +5,7 @@
 #### INF3135, UQAM, AUT2024
 * Jeu Inspiré de Super Hexagon
 
-Ce projet pour le cours **INF 3135** est un jeu vidéo inspiré de *Super Hexagon* de Terry Cavanagh. Le joueur contrôle une flèche rouge qui tourne autour d’un centre, tout en évitant des obstacles qui apparaissent de manière aléatoire. L’objectif principal est de survivre le plus longtemps possible en esquivant ces obstacles.
+Ce projet pour le cours **INF3135** est un jeu vidéo inspiré de *Super Hexagon* de Terry Cavanagh. Le joueur contrôle une flèche rouge qui tourne autour d’un centre, tout en évitant des obstacles qui apparaissent de manière aléatoire. L’objectif principal est de survivre le plus longtemps possible en esquivant ces obstacles.
 
 Le jeu propose trois niveaux de difficulté : **Easy**, **Normal**, et **Hard**, chacun augmentant la vitesse des obstacles. Avec une esthétique minimaliste et un gameplay addictif, ce projet met en valeur des concepts clés en programmation tels que la gestion des événements, les animations graphiques, et l’intégration audio pour une expérience immersive.
 
@@ -45,11 +45,9 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
 
 ## Fonctionnement
 
-- Pour compiler, allez dans le dossier /src.  Par la suite, faire la commande 'make'.
-
-- Pour partir le jeux, faire la commande './circle'
-
-- Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
+* Pour compiler, allez dans le dossier /src.  Par la suite, faire la commande 'make'.
+* Pour partir le jeux, faire la commande './circle'
+* Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
 
 #### Objectif du jeu
 Le but du jeu est de survivre le plus longtemps possible en évitant les obstacles.
@@ -63,7 +61,7 @@ Le jeu débute sur la page du menu. Vous pouvez choisir parmi trois niveaux de d
 ![Menu principal](./assets/screen_menu.png)
 
 #### Choix de la difficulté
-Après avoir sélectionné "Play", vous choisissez le niveau de difficulté.
+Après avoir sélectionné "Difficulty", vous choisissez le niveau de difficulté.
 ![Sélection de la difficulté](./assets/screen_difficulty.png)
 
 #### Pendant le jeu
@@ -85,7 +83,7 @@ Si vous touchez un obstacle, l'écran de fin apparaît. Appuyez sur la touche `E
 
 ## Références
 
-Citez vos sources ici, s'il y a lieu.
+N.A
 
 ## Division des tâches
 
