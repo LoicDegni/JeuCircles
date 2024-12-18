@@ -41,11 +41,15 @@ unsigned int file_pop(file *f) {
     int cadran = temp->cadran;
     if(f->first == f->last) {
         f->first = f->last = NULL;
+        temp->next = NULL;
+        temp->prev = NULL;
         free(temp);
     }
     else{
         f->first = temp->prev;
         f->first->next = NULL;
+        temp->next = NULL;
+        temp->prev = NULL;
         free(temp);
     }
     return cadran;
