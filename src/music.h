@@ -6,7 +6,7 @@
 
 int music_initialisation();
 
-int music_play();
+int music_play(Mix_Music *music);
 
 Mix_Music *music_load();
 
