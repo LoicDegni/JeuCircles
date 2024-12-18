@@ -1,4 +1,3 @@
-
 PREFIX = /opt/homebrew/Cellar
 SDL2_INCLUDE = $(PREFIX)/sdl2/2.30.10/include
 SDL2_LIB = $(PREFIX)/sdl2/2.30.10/lib

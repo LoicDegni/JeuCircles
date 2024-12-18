@@ -2,7 +2,7 @@
 
 ## Description
 
-#### INF3135, UQAM, AUT2024
+#### INF3135 - AUTOMNE 2024 - UQAM
 * Jeu Inspiré de Super Hexagon
 
 Ce projet pour le cours **INF3135** est un jeu vidéo inspiré de *Super Hexagon* de Terry Cavanagh. Le joueur contrôle une flèche rouge qui tourne autour d’un centre, tout en évitant des obstacles qui apparaissent de manière aléatoire. L’objectif principal est de survivre le plus longtemps possible en esquivant ces obstacles.
@@ -17,6 +17,10 @@ Le jeu propose trois niveaux de difficulté : **Easy**, **Normal**, et **Hard**,
 ## Dépendances
 
 Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs dépendances logicielles et bibliothèques. Ces dépendances sont essentielles au bon fonctionnement du jeu.
+
+Pour un MacOS avec puce M2, il est essentiel de telecharger les dependances cite plus bas avec homebrew et d'utiliser les options de compilation et d'editions menant aux dossier homebrew. Dependament de la configuration de votre votre Mac et de la version des librairies telecharge, il faudrait peut etre modifier les chemins vers les differentes librairies.
+
+Pour ce qui est d'Ubuntu les options de compilation pkg-config permettront de compiler l'executable du jeu. 
 
 ##### Logiciels
 
