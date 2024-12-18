@@ -1,6 +1,4 @@
 #include "application.h"
-#include "sdl2.h"
-#include <stdio.h>
 
 struct application *application_initialize() {
     struct application *application;
@@ -47,12 +45,28 @@ void application_run(struct application *application) {
                 if (application->menu->state == MENU_QUIT) {
                     application->state = APPLICATION_STATE_QUIT;
                 } else if (application->menu->state == MENU_PLAY) {
-                    application->state = APPLICATION_STATE_QUIT;
+                    application->state = APPLICATION_STATE_PLAY;
                 }
                 break;
             case APPLICATION_STATE_PLAY:
+               application->play = play_initialize(application->renderer, application->menu->diff_select);
+               music_initialisation();
+               Mix_Music *music = music_load();
+               music_play(music);
+               play_run(application->play);
+                if (application->play->state == PLAY_QUIT) {
+                    music_delete(music);
+                    play_delete(application->play);
+                    application->state = APPLICATION_STATE_QUIT;
+                }else if (application->play->state == PLAY_LOST) {
+                    music_delete(music);
+                    play_delete(application->play);
+                    application->state = APPLICATION_STATE_MENU;
+                    application->menu->state = MENU_PLAY_FOCUS;
+                }
                 break;
             case APPLICATION_STATE_QUIT:
+                application_shut_down(application);
                 break;
         }
     }
@@ -62,8 +76,17 @@ void application_shut_down(struct application *application) {
     SDL_DestroyRenderer(application->renderer);
     SDL_DestroyWindow(application->window);
     menu_delete(application->menu);
+    if (application->play != NULL){
+        play_delete(application->play);
+    }
     free(application);
     application = NULL;
     IMG_Quit();
     SDL_Quit();
 }
+
+void initialize_random_time() {
+   srand(time(NULL));
+}
+
+
