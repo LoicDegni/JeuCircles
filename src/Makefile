@@ -23,6 +23,9 @@ $(EXEC): $(OBJS)
 %.o: %.c
 	$(CC) $< $(CFLAGS) -c -o $@
 
+leak: $(EXEC)
+	valgrind --leak-check=full --show-leak-kinds=all ./circles
+
 .PHONY: clean
 
 clean:
