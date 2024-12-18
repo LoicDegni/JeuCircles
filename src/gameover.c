@@ -41,6 +41,7 @@ void game_over_display(struct game_over *g){
 
 void game_over_delete(struct game_over *g){
     abort_game_over(g);
+    spritesheet_delete(g->background);
     free(g);
 }
 

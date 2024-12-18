@@ -141,6 +141,10 @@ void menu_delete(struct menu *menu) {
         spritesheet_delete(menu->title);
         spritesheet_delete(menu->play);
         spritesheet_delete(menu->quit);
+        spritesheet_delete(menu->difficulty);
+        spritesheet_delete(menu->easy);
+        spritesheet_delete(menu->medium);
+        spritesheet_delete(menu->hard);
         free(menu);
     }
 }

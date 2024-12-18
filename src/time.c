@@ -55,5 +55,6 @@ void abort_time(struct time *t) {
 
 void time_delete(struct time *t) {
     abort_time(t);
+    spritesheet_delete(t->chrono);
     free(t);
 }

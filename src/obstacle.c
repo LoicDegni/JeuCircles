@@ -63,6 +63,7 @@ obstacle* obstacle_initialize(int rayon) {
 void file_delete(file *f) {
     abort_file(f);
     while(file_pop(f) != 0);
+    free(f);
 }
 
 void file_display(SDL_Renderer *renderer, const file *f) {
