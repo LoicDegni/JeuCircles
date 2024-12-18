@@ -2,7 +2,7 @@
 
 ## Description
 
-### INF3135, UQAM, AUT2024
+#### INF3135, UQAM, AUT2024
 * Jeu Inspiré de Super Hexagon
 
 Ce projet pour le cours **INF 3135** est un jeu vidéo inspiré de *Super Hexagon* de Terry Cavanagh. Le joueur contrôle une flèche rouge qui tourne autour d’un centre, tout en évitant des obstacles qui apparaissent de manière aléatoire. L’objectif principal est de survivre le plus longtemps possible en esquivant ces obstacles.
@@ -12,13 +12,13 @@ Le jeu propose trois niveaux de difficulté : **Easy**, **Normal**, et **Hard**,
 ## Auteurs
 
 - Olivier Généreux-Vincent (GENO22058208)
-- Prénom et nom (Code permanent)
+- Kaikou Loic Degni (DEGK24059500)
 
 ## Dépendances
 
 Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs dépendances logicielles et bibliothèques. Ces dépendances sont essentielles au bon fonctionnement du jeu.
 
-## Logiciels
+##### Logiciels
 
 - **Compilateur GCC**  
   Le projet nécessite un compilateur C pour compiler le code source. Vous pouvez utiliser GCC ou Clang. Ces compilateurs sont généralement installés par défaut sur les systèmes Unix, Ubuntu et macOS avec Xcode.  
@@ -26,7 +26,7 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
   - Pour **Ubuntu**, GCC est préinstallé ou peut être installé via le gestionnaire de paquets :  
     [Documentation Ubuntu GCC](https://packages.ubuntu.com/search?keywords=gcc)
 
-## Bibliothèques
+#### Bibliothèques
 
 - **SDL2 (Simple DirectMedia Layer 2)**  
   SDL2 est utilisé pour la gestion des graphiques, des entrées utilisateur et de l'audio.  
