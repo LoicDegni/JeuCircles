@@ -50,14 +50,14 @@ Avant de pouvoir exécuter le projet, il est nécessaire d'installer plusieurs d
 * Quel est sont but?
 * Les flèches servent à naviguer dans le menu et la touche 'Enter' permet de faire les choix.
 * Le jeu debute sur la page du menu
-* [](./assets/screen_menu.png)
+* [1](./assets/screen_menu.png)
 * Vous pouvez faire un choix parmis les trois niveaux de difficultes
-* [](./assets/screen_difficulty.png)
+* [2](./assets/screen_difficulty.png)
 * Apres avoir cliquer sur play, le jeu debute. Vous avez le chronometre en haut a droite de l'ecran
-* [](./assets/screen_play.png)
+* [3](./assets/screen_play.png)
 * Pour déplacer le joueur durant la partie, appuyer sur les flèches GAUCHE et DROITE.
 * Si vous toucher un obstacle, vous arrivez a l'ecran de fin. Il suffit de cliquer sur la touche return pour revenir au menu principal
-* [](./assets/screen_end.png)
+* [4](./assets/screen_end.png)
 
 ## Plateformes supportées
 
