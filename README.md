@@ -79,33 +79,6 @@ Pour déplacer le joueur, appuyez sur les flèches `GAUCHE` et `DROITE`.
 Si vous touchez un obstacle, l'écran de fin apparaît. Appuyez sur la touche `Enter` pour revenir au menu principal.
 ![Écran de fin](./assets/screen_end.png)
 
-
-## Plateformes supportées
-
-* MacOS M2
-* Ubuntu
-
-## Références
-
-N.A
-
-## Division des tâches
-
-Donnez ici une liste des tâches de chacun des membres de l'équipe. Utilisez la
-syntaxe suivante (les crochets vides indiquent que la tâche n'est pas
-complétée, les crochets avec un `X` indique que la tâche est complétée):
-
-* [X] Gestion du menu (Olivier)
-* [X] Affichage de la scène (Olivier, Loic)
-* [X] Affichage du chronomètre (Loic)
-* [X] Animation des murs (Loic, Olivier)
-* [X] Animation du joueur (Olivier)
-* [X] Détection des collisions (Olivier, Loic)
-* [X] Affichage d'une partie terminée (Loic)
-* [X] Gestion de la musique principale (Olivier)
-* [ ] Gestion des sons lorsqu'on navigue dans le menu
-* [ ] Gestion de la musique de fin de partie
-
 ## État du projet
 
 Le programme marche sans bogue du début à la fin.  Plusieurs parties peuvent être effectuer une à la suite de l'autre.
