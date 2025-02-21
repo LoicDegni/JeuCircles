@@ -11,8 +11,8 @@ Le jeu propose trois niveaux de difficulté : **Easy**, **Normal**, et **Hard**,
 
 ## Auteurs
 
-- Olivier Généreux-Vincent (GENO22058208)
-- Kaikou Loic Degni (DEGK24059500)
+- Olivier Généreux-Vincent
+- Kaikou Loic Degni
 
 ## Dépendances
 
